@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SignUp Form</title>
+
+</head>
+
+
+<body>
+	<div class="login-form">
+		<div class="container">
+ 			 <ul class="nav nav-pills">
+   			 	<li><a routerLink="/userLogin">Login</a></li>
+    			<li class="active"><a routerLink="#">Register</a></li>
+  			</ul>
+		</div>
+		<form   #cal="ngForm" (ngSubmit)="userSignUp(cal.value)" >	
+			<h2 class="text-center">Register</h2>
+			<div class="form-group">
+				<input type="text" class="form-control" id="uname" name="uname" ngModel
+					placeholder="full name" required="required">
+			</div>
+			<div class="form-group">
+				<input type="email" class="form-control" id="email" name="email" ngModel
+					placeholder="email@gmail.com" required="required">
+			</div>
+			<div class="form-group">
+				<input type="password" minlength="8" class="form-control" name="password" id="password1" ngModel
+					placeholder="Password" required="required">
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" name="password" id="password2" ngModel
+					placeholder="Confirm Password" minlength="8" required="required">
+			</div>
+			<p id = "pwd" style="color:red;"></p>
+			<div class="form-group">
+					<input type="text"  name="phno" class="form-control" maxlength="10" pattern="\d{10}" title="Please enter exactly 10 digits" 
+					placeholder="phone number" ngModel required="required"/>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary btn-block" >Sign
+					Up</button>
+			</div>
+			<!-- <p align="center">
+				<a routerLink="/userLogin">Log In</a>
+			</p> -->
+		</form>
+	</div>
+
+ 
+	</body>

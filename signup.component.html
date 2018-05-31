@@ -1,0 +1,87 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SignUp Form</title>
+
+</head>
+
+
+<body>
+	<br>
+	<div class="login-form">
+		<form #cal="ngForm" (ngSubmit)="processsignup(cal.value)">
+
+			<h2 class="text-center">Register</h2>
+			<div class="form-group">
+				<input type="text" class="form-control" id="uname" name="rname"
+					required minlength="4" appForbiddenName="bob"
+					placeholder="Restuarant Name" required="required" [(ngModel)]="user.name"
+					#name="ngModel">
+
+
+				<div *ngIf="name.invalid && (name.dirty || name.touched)"
+					class="alert alert-danger">
+
+					<div *ngIf="name.errors.required">Name is required.</div>
+					<div *ngIf="name.errors.minlength">Name must be at least 4
+						characters long.</div>
+					
+				</div>
+
+			</div>
+			
+			<div class="form-group">
+				<input type="password" minlength="8" class="form-control"
+					name="password" id="password1" placeholder="Password"
+					required="required" [(ngModel)]="user.password" #password="ngModel">
+				<div
+					*ngIf="password.invalid && (password.dirty || password.touched)"
+					class="alert alert-danger">
+
+					<div *ngIf="password.errors.required">Password is required.</div>
+					<div *ngIf="password.errors.minlength">Password must be at
+						least 8 characters long.</div>
+					
+
+				</div>
+
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" id="email" name="regname" ngModel
+					placeholder="Registration Name" required="required" [(ngModel)]="user.regname" #regname="ngModel">
+			<div
+					*ngIf="regname.invalid && (regname.dirty || regname.touched)"
+					class="alert alert-danger">
+
+					<div *ngIf="regname.errors.required">Registration name is required.</div>
+					</div>
+			</div>
+			
+			<div class="form-group">
+					<input type="text"  name="location" class="form-control" placeholder="Location" ngModel required="required" [(ngModel)]="user.location" #location="ngModel"/>
+			<div
+					*ngIf="location.invalid && (location.dirty || location.touched)"
+					class="alert alert-danger">
+
+					<div *ngIf="location.errors.required">Location is required.</div>
+					</div>
+			</div>
+			<div class="form-group">
+					<input type="file"  name="img" class="form-control" placeholder="Upload Image" ngModel required="required" [(ngModel)]="user.img" #img="ngModel"/>
+			<div
+					*ngIf="img.invalid && (img.dirty || img.touched)"
+					class="alert alert-danger">
+
+					<div *ngIf="img.errors.required">Image is required.</div>
+					</div>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary btn-block"
+					[disabled]="!cal.valid">Sign Up</button>
+			</div>
+			
+		</form>
+	</div>
+	
+
+</body>

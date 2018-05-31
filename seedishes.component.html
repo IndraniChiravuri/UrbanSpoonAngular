@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Head</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-5 col-md-5 col-lg-5">
+					<h1>Dishes</h1>
+					<br>
+					<div class="card" style="width: 650px"
+						*ngFor="let person of demodata.dish">
+						<img class="card-img-top" src={{person.imagePath}}
+							alt="Card image" height="200" width="200">
+						<div class="card-body">
+							<h4 class="card-title">{{person.dish_name}}</h4>
+							<p class="card-text">{{person.dish_cuisine}}</p>
+
+							<a class="btn btn-primary">Get feedback</a><br>
+							<br>
+						</div>
+					</div>
+				
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
